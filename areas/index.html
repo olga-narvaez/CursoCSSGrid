@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title> Funciones </title>
+    <!--
+        <link rel="stylesheet" href="../css/style.css">
+    -->    
+    <style>
+        body{
+    font-family: Arial;
+}
+.container{
+    display: grid;
+
+    grid-template: 100px 1fr 150px / 200px 1fr;
+    /* Si coloco auto va a determinar el espacio de acuerdo al contenido de las columnas */
+    /* grid-template: 300px 100px 100px / auto auto auto; */
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    /* grid-gap: filas columnas; */
+    grid-gap: 10px;
+    height: 100vh;
+    grid-template-areas:    "header header" 
+                            "left content" 
+                            "footer footer";
+}
+.item{
+    /* background: lightblue; */
+    padding: 10px;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+}
+/* Me toma el elemento de tipo item que elija, en este caso el 4to*/
+.item:nth-of-type(4){
+    /* background: blue; */
+    overflow: auto;
+  /* Toma el template del Grid padre 
+  display: subgrid; */
+    display: grid;
+/* display: inline-grid; */
+    grid-template: 50px 50px 50px / 200px 200px 200px;
+  
+}
+/* .item .item{ 
+    background: yellow;
+}*/
+.header{
+    grid-area: header;
+    background:#55efc4;
+}
+.left{
+    grid-area: left;
+    background: #ff7675;
+}
+.content{
+    grid-area: content;
+    background: #b2bec3;
+}
+.footer{
+    grid-area: footer;
+    background: #00cec9;
+}
+    </style>
+    </head>
+    <body>
+        <section class="container">
+            <div class="item header">  header </div>
+            <div class="item left">left </div>
+            <div class="item content"> content </div>
+            <div class="item footer">footer</div>
+        </section>
+    </body>
+</html>
