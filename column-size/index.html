@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title> Tamaño de Item en Columnas </title>  
+        <style>
+            body{
+            font-family: Arial;
+            }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr );
+            grid-template-rows: repeat(4, 1fr ); 
+            grid-gap: 10px;
+            height: 100vh;
+        }
+        .item{
+            background: #55efc4; 
+            padding: 10px;
+            border: 1px solid  #ff7675; 
+            border-radius: 10px;
+        }
+/* Me toma el elemento de tipo item que elija, en este caso el 4to*/
+        .item:nth-of-type(1){
+            background: #b2bec3;
+            /* Con esta propiedad indicamos en que linea inicia la columna  */
+            grid-column-start: 1;
+            /*  Y en que linea termina, si ocupa 2 columnas, inicia en la linea 1 y termina en la linea 3 */
+            grid-column-end: 3;
+        }
+        .item:nth-of-type(8){
+        /* Tambien lo podemos declarar de esta manera grid-column: inicio / final ; */
+            /* grid-column: 2 / 4; */
+            /* Si no sabemos en donde termina podemos declarar cuantos espacios va a ocupar de la siguiente forma */
+            /* grid-column: 1 / span 2; */
+            /* Si queremos que ocupe todo el ancho de acuerdo a la cantidad de columnas  */
+            grid-column: 1 / -1;
+        }
+        .item:nth-of-type(7){
+        /* Tambien lo podemos declarar de esta manera grid-column: inicio / final ; */
+            grid-column: 2 / 4;
+        }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <div class="item">item #1</div>
+            <div class="item">item #2</div>
+            <div class="item">item #3</div>
+            <div class="item">item #4</div>
+            <div class="item">item #5</div>
+            <div class="item">item #6</div>
+            <div class="item">item #7</div>
+            <div class="item">item #8</div>
+            <div class="item">item #9</div>
+            <div class="item">item #10</div>
+            <div class="item">item #11</div>
+            <div class="item">item #12</div>
+        </section>
+    </body>
+</html>
